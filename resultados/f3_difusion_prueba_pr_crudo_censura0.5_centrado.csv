@@ -1,0 +1,5 @@
+método,RMSE,CRPS,media (mm/d),frec. húmedos ≥1mm (%),p95 (mm/d),p99 (mm/d),PSS
+obs,0.0,0.0,4.482,51.256,19.372,41.508,1.0
+listón (interp.),5.586,2.374,4.347,62.33,15.953,27.416,0.869
+U-Net,3.552,1.49,4.301,51.597,18.157,38.358,0.99
+"Difusión (8 miembros, secos censurados, centrado)",3.548,1.203,4.372,45.37,19.916,42.147,0.937

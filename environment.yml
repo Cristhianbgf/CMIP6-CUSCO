@@ -1,0 +1,57 @@
+# Entorno del proyecto CMIP6-CUSCO. Crear con:
+#   conda env create -f environment.yml
+name: cmip6-cusco
+channels:
+  - conda-forge
+  - nodefaults   # excluir el canal defaults de Anaconda (mezcla y agota memoria al resolver)
+dependencies:
+  - python=3.12
+  # núcleo científico
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  # datos climáticos n-dimensionales
+  - xarray
+  - dask
+  - netcdf4
+  - h5netcdf
+  - zarr
+  - bottleneck
+  - flox
+  # acceso a datos en la nube (CMIP6 Pangeo/GCS, NEX-GDDP AWS)
+  - intake-esm
+  - gcsfs
+  - s3fs
+  - fsspec
+  - aiohttp
+  - requests
+  # índices climáticos y ajuste de sesgo
+  - xclim
+  - xsdba
+  # geoespacial (recortes, DEM); sin xESMF, que no existe para Windows
+  - rioxarray
+  - rasterio
+  - geopandas
+  # visualización
+  - matplotlib
+  - cartopy
+  - seaborn
+  - cmcrameri
+  # notebooks y pruebas
+  - jupyterlab
+  - ipykernel
+  - pytest
+  - pyyaml
+  - pip
+  - pip:
+      # ajuste de sesgo ECMWF (QDM, CDFt, ISIMIP3BASD + evaluación)
+      - ibicus
+      # regrillado puro-Python (reemplazo de xESMF en Windows)
+      - xarray-regrid
+      # deep learning
+      - torch
+      # CRPS y métricas probabilísticas
+      - properscoring
+      # API de Copernicus para ERA5 (solo si se corre el análisis PP)
+      - cdsapi

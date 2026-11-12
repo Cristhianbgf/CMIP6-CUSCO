@@ -1,0 +1,48 @@
+# Configuración central del proyecto CMIP6-CUSCO.
+# Dominio, periodos y modelos. Los scripts lo leen con
+# cmip6cusco.config.cargar_config().
+
+dominio:
+  nombre: "Cusco altoandino"
+  lat_min: -16.0   # grados (negativo = Sur)
+  lat_max: -11.0
+  lon_min: -75.0   # grados (negativo = Oeste)
+  lon_max: -70.0
+  resolucion_objetivo: 0.1   # grados (~10 km), grilla de PISCO/RAIN4PE
+
+periodos:
+  historico: [1981, 2014]        # solape obs / historical CMIP6
+  entrenamiento: [1981, 2005]
+  validacion: [2006, 2010]
+  prueba: [2011, 2014]
+  referencia_cambio: [1985, 2014]
+  horizonte_2050: [2035, 2064]
+  horizonte_2100: [2071, 2100]
+
+escenarios:            # alineados con BASD-CMIP6-PE para comparabilidad
+  - ssp126
+  - ssp370
+  - ssp585
+
+gcms:                  # los 10 de BASD-CMIP6-PE (Fernandez-Palomino et al. 2024)
+  - CanESM5            # ECS alta ("modelo caliente")
+  - UKESM1-0-LL        # ECS alta
+  - IPSL-CM6A-LR
+  - CNRM-CM6-1
+  - CNRM-ESM2-1
+  - EC-Earth3
+  - MPI-ESM1-2-HR
+  - MRI-ESM2-0
+  - MIROC6
+  - GFDL-ESM4
+
+variables:
+  - pr        # precipitación (canónico: mm/día)
+  - tasmax    # temperatura máxima (canónico: °C)
+  - tasmin    # temperatura mínima (canónico: °C)
+
+indices_etccdi:        # calculados con xclim
+  precipitacion: [rx1day, rx5day, r95p, r99p, cdd, cwd, prcptot, sdii]
+  temperatura: [tnn, txx, tn10p, tx90p, fd, dtr]   # fd = días de helada
+
+semilla: 42            # semilla global de reproducibilidad

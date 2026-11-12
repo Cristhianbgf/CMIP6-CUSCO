@@ -1,0 +1,52 @@
+# Datos: no se versionan (ver docs/data.md)
+data/raw/*
+data/interim/*
+data/processed/*
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+*.nc
+*.nc4
+*.zarr/
+*.grib
+*.grib2
+*.tif
+*.tiff
+
+# Modelos entrenados y corridas
+modelos/
+runs/
+*.pt
+*.pth
+*.ckpt
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Entornos
+.venv/
+venv/
+
+# Credenciales (CDS API, tokens)
+.cdsapirc
+*.token
+.env
+
+# SO / editores
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# Logs locales y versiones anteriores de resultados
+data/logs/
+resultados/archivo_*/
+colab/

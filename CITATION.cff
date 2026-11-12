@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "CMIP6-CUSCO: downscaled CMIP6 projections of climate extremes for Cusco, Peru"
+type: software
+authors:
+  - family-names: "Gamarra Fuentes"
+    given-names: "Cristhian Brandon"
+repository-code: "https://github.com/Cristhianbgf/CMIP6-CUSCO"
+license: MIT
+version: 0.6.0
+date-released: 2026-11-10
+keywords:
+  - downscaling
+  - CMIP6
+  - deep learning
+  - diffusion
+  - Andes
+  - Cusco
+  - climate extremes
+  - ETCCDI

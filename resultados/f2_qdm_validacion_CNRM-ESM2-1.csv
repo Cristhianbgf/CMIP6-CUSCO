@@ -1,0 +1,14 @@
+variable,métrica,obs,GCM crudo,GCM+QDM
+pr,media (mm/d),4.061,5.799,4.157
+pr,frec. húmedos ≥1mm (%),46.128,62.576,46.016
+pr,p95 (mm/d),18.474,21.309,18.905
+pr,p99 (mm/d),40.956,33.448,43.689
+pr,PSS,1.0,0.829,0.993
+tasmax,media (°C),23.619,17.759,23.692
+tasmax,p05 (°C),14.27,7.958,13.993
+tasmax,p95 (°C),33.6,30.22,33.919
+tasmax,PSS,1.0,0.608,0.966
+tasmin,media (°C),9.745,7.359,9.936
+tasmin,p05 (°C),-4.18,-2.989,-4.069
+tasmin,p95 (°C),22.84,19.691,23.122
+tasmin,PSS,1.0,0.807,0.977

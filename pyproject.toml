@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cmip6cusco"
+version = "0.6.0"
+description = "Downscaled CMIP6 projections of climate extremes (ETCCDI) for Cusco, Peru: QDM bias adjustment, U-Net and residual diffusion"
+authors = [{ name = "Cristhian Brandon Gamarra Fuentes" }]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
