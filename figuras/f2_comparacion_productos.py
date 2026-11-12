@@ -53,7 +53,7 @@ def figura():
 
     paneles = [
         panel("pr", "media (mm/d)", "Mean daily precipitation", "mm/day", fmt="{:.1f}"),
-        panel("pr", "p99 (mm/d)", "Precipitation on the most extreme days (p99)", "mm/day"),
+        panel("pr", "p99 (mm/d)", "Extreme-day precipitation (p99)", "mm/day"),
         panel("pr", "PSS", "Precipitation distribution (PSS)",
               "PSS (1 = identical)", es_pss=True, fmt="{:.2f}"),
         panel("tasmax", "media (°C)", "Mean maximum temperature", "°C"),

@@ -45,39 +45,40 @@ def figura():
     ax.axis("off")
 
     # --- cajas ---
-    caja(ax, 35, 91, 46, 9,
+    # Las tres ramas van en una sola fila (QDM a 0.1°, U-Net y difusión), con los pares
+    # de entrenamiento entre las dos redes, para que ninguna flecha cruce una caja.
+    caja(ax, 45, 91, 46, 9,
          "CMIP6 global models (daily)\n10 models · 3 scenarios", GRIS, 10)
-    caja(ax, 35, 75, 46, 9,
+    caja(ax, 45, 76, 46, 9,
          "QDM bias adjustment\n(Cannon 2015)", AZUL, 10)
 
-    caja(ax, 15, 57, 25, 10,
-         "QDM (0.1°)\nclassical method", AZUL, 9)
-    caja(ax, 56, 63, 34, 7.5, "U-Net", VERDE, 9.5)
-    caja(ax, 56, 52, 34, 7.5,
-         "Residual diffusion", VERDE, 9.5)
-    caja(ax, 87, 57.5, 22, 15,
+    caja(ax, 11, 57, 17, 10,
+         "QDM (0.1°)\nclassical\nmethod", AZUL, 9)
+    caja(ax, 36, 57, 17, 10, "U-Net", VERDE, 9.5)
+    caja(ax, 61, 57, 18, 13,
          "Training pairs\nobs 1° → obs 0.1°\n(PISCO + RAIN4PE,\nPISCOt) + DEM",
-         GRIS, 8.5, negrita=False)
+         GRIS, 8, negrita=False)
+    caja(ax, 86, 57, 17, 10, "Residual\ndiffusion", VERDE, 9.5)
 
-    caja(ax, 56, 39, 34, 8,
+    caja(ax, 61, 39, 30, 8,
          "Downscaled\n0.1° fields", VERDE, 9.5)
-    caja(ax, 35, 24, 50, 8.5,
+    caja(ax, 45, 24, 50, 8.5,
          "ETCCDI extreme indices (xclim)\n14 indices · median and P10–P90", AMBAR, 10)
-    caja(ax, 35, 9, 50, 8.5,
+    caja(ax, 45, 9, 50, 8.5,
          "Projections 2035–2064 and 2071–2100\nSSP1-2.6 · SSP3-7.0 · SSP5-8.5", AMBAR, 10)
 
     # --- flechas ---
-    flecha(ax, (35, 86.5), (35, 79.5))            # GCM -> QDM
-    flecha(ax, (28, 70.5), (17, 62))              # QDM -> producto QDM
-    flecha(ax, (44, 71), (52, 66.5))              # QDM -> U-Net
-    flecha(ax, (44, 70.5), (50, 55))              # QDM -> difusión
-    flecha(ax, (76, 60), (73, 63), col="#7a7a7a", lw=1.4)   # entrenamiento -> U-Net
-    flecha(ax, (76, 55), (73, 52.5), col="#7a7a7a", lw=1.4)  # entrenamiento -> difusión
-    flecha(ax, (56, 59), (56, 43), lw=1.6)        # U-Net -> campos finos
-    flecha(ax, (58, 48.5), (58, 43), lw=1.6)      # difusión -> campos finos
-    flecha(ax, (52, 35.5), (40, 28.5))            # downscaled -> ETCCDI
-    flecha(ax, (15, 51.5), (25, 28))              # producto QDM -> ETCCDI
-    flecha(ax, (35, 19.5), (35, 13.5))            # ETCCDI -> Projections
+    flecha(ax, (45, 86.1), (45, 81.1))            # GCM -> QDM
+    flecha(ax, (30, 71.1), (14, 62.6))            # QDM -> producto QDM
+    flecha(ax, (40, 71.1), (37, 62.6))            # QDM -> U-Net
+    flecha(ax, (62, 71.1), (83, 62.6))            # QDM -> difusión
+    flecha(ax, (51.6, 57), (44.9, 57), col="#7a7a7a", lw=1.4)   # entrenamiento -> U-Net
+    flecha(ax, (70.4, 57), (77.1, 57), col="#7a7a7a", lw=1.4)   # entrenamiento -> difusión
+    flecha(ax, (38, 51.6), (52, 43.6), lw=1.6)    # U-Net -> campos finos
+    flecha(ax, (84, 51.6), (70, 43.6), lw=1.6)    # difusión -> campos finos
+    flecha(ax, (58, 34.6), (52, 28.9))            # downscaled -> ETCCDI
+    flecha(ax, (12, 51.6), (30, 28.9))            # producto QDM -> ETCCDI
+    flecha(ax, (45, 19.4), (45, 13.9))            # ETCCDI -> Projections
 
     # nota del marco MOS-SR
     ax.text(50, 100.5,
